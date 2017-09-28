@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    session[:user_id] = 1
     @comments = Comment.where(post_id: @post.id)
     @comment = Comment.new(post_id: @post.id)
   end
